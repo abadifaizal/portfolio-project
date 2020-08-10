@@ -13,17 +13,17 @@ const durationEl = document.querySelector('#duration');
 // Song
 const songs = [
     {
-        name : 'Song-1',
+        name : 'song-1',
         displayName : 'Main Theme',
         artist : 'Tetris 99',
     },
     {
-        name : 'Song-2',
+        name : 'song-2',
         displayName : 'Game Theme',
         artist : 'Tetris 99',
     },
     {
-        name : 'Song-3',
+        name : 'song-3',
         displayName : 'Game Theme (50)',
         artist : 'Tetris 99',
     },
