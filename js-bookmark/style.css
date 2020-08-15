@@ -126,6 +126,7 @@ h1:hover {
 }
 
 .close-icon {
+  top: 6%;
   cursor: pointer;
   font-size: 24px;
   color: #ffffff;
