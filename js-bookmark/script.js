@@ -21,3 +21,38 @@ modalClose.addEventListener('click', function(){
 window.addEventListener('click', function(event){
     if(event.target === modal ? modal.classList.remove('show-modal') : false);
 });
+
+// Validate Form
+function validate(websiteNameValue, websiteUrlValue){
+    const expression = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g;
+    const regex = new RegExp(expression);
+    if(!websiteNameValue || !websiteUrlValue){
+        //if website name value == empty or website url value == empty
+        alert('Please submit values for both fields.');
+        return false;
+    }
+    if(!websiteUrlValue.match(regex)){
+        alert('Please provide a valid web address.');
+        return false;
+    }
+    // if all condition match set value to true
+    return true;
+}
+
+// Handle data form
+function storeBookmark(event){
+    event.preventDefault();
+    const websiteNameValue = websiteNameEl.value;
+    let websiteUrlValue = websiteUrlEl.value;
+    // Adding https:// for correct path if there is none
+    if(!websiteUrlValue.includes('http://', 'https://')){
+        websiteUrlValue = `https://${websiteUrlValue}`;
+    }
+    console.log(websiteNameValue, websiteUrlValue);
+    if(!validate(websiteNameValue, websiteUrlValue)){
+        // check if the both website name value and website url value are true, if it doesn't set the value to false and code above will not continue or run;
+        return false;
+    }
+}
+
+bookmarkForm.addEventListener('submit', storeBookmark);
