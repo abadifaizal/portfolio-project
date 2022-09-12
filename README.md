@@ -14,3 +14,6 @@ Link to the homepage : https://abadifaizal.github.io/portfolio-project/
 - Pig Game : https://abadifaizal.github.io/portfolio-project/js-pig-game/
 - Quote of the day : https://abadifaizal.github.io/portfolio-project/js-quote/
 - Spook Rook Game : https://abadifaizal.github.io/portfolio-project/js-spock-rock-game/
+- Color Flipper : https://abadifaizal.github.io/portfolio-project/js-color-flipper/
+- Grocery List : https://abadifaizal.github.io/portfolio-project/js-groceryBud/
+- Menu List : https://abadifaizal.github.io/portfolio-project/js-menu/
