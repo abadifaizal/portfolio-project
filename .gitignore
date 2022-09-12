@@ -1,5 +1,5 @@
 [Cc]ors-anywhere/
 node_modules/
 .DS_Store
-*.log.env
+*.env
 --template/
