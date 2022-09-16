@@ -31,12 +31,12 @@ function createSuspectsObjects(name) {
   }
 }
 
-var suspects = ["Miss Scarlet", "Colonel Mustard", "Mr. White"];
-var suspectsList = [];
+// var suspects = ["Miss Scarlet", "Colonel Mustard", "Mr. White"];
+// var suspectsList = [];
 
-for(let i =0 ; i < suspects.length; i++) {
-  suspectsList.push(createSuspectsObjects(suspects[i]).speak());
-}
+// for(let i =0 ; i < suspects.length; i++) {
+//   suspectsList.push(createSuspectsObjects(suspects[i]).speak());
+// }
 
 const _ = {};
 
@@ -147,3 +147,45 @@ _.map(videoData, function(suspectObject){
   // }
   console.log(suspectObject.present);
 })
+
+// Arrow function
+const suspects = _.filter(videoData, function(suspectObject) {
+  return suspectObject.present;
+})
+
+const suspectsNames = _.map(suspects, suspect => {
+  console.log(suspect.name);
+  return suspect.name;
+})
+
+// Spread operator with arrow function
+// const createTuple = (a, b, c, d) => {
+//   console.log(arguments);
+//   console.log([[a, c], [b, d]]);
+//   return [[a, c], [b, d]];
+// }
+
+// const createTuple = function(a, b, c, ...d) {
+//   console.log(arguments);
+// }
+
+// createTuple('It', 'be', 'could', 'anyone', 'no one');
+
+const constructArr = function() {
+  const arr = Array.prototype.slice.call(arguments);
+  arr.push('the billards room?');
+  console.log(arr.join(' '));
+  // return ;
+}
+
+constructArr('was', 'it', 'in');
+
+// FROM function
+_.from = function(list, callBack) {
+  const storage = [];
+  _.each(list, function(val, i, list) {
+    storage.push(callBack(val, i, list));
+  });
+  // return 
+  return storage;
+}
