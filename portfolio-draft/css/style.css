@@ -47,6 +47,10 @@ a:hover {
   text-decoration: none;
 }
 
+img {
+  width: 100%;
+}
+
 /* background color divs */
 .section-plum {
   background-color: var(--plum);
@@ -68,7 +72,7 @@ a:hover {
 
 /* intro styles */
 #intro {
-  padding-bottom: 4rem 1rem 10rem;
+  padding: 4rem 1rem 10rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -232,6 +236,50 @@ footer ul {
   border-top: 1px solid var(--aqua);
   border-radius: 25px;
   padding: 1rem;
+}
+
+@media (min-width: 550px) {
+  article {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 1rem;
+  }
+
+  #projects {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  #projects img {
+    grid-column: 1/6;
+    grid-row: 1/2;
+  }
+
+  .text {
+    order: 2;
+    text-align: right;
+    grid-column: 5/11;
+    grid-row: 1/2;
+  }
+
+  #projects ul {
+    justify-content: flex-end;
+  }
+
+  #projects .reverse img {
+    grid-column: 6/11;
+    grid-row: 1/2;
+  }
+
+  #projects .reverse .text {
+    grid-column: 1/7;
+    order: 2;
+    text-align: left;
+  }
+
+  #projects .reverse ul {
+    justify-content: flex-start;
+  }
 }
 
 @media (min-width: 850px) {
