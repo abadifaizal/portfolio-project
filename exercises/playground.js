@@ -189,3 +189,28 @@ _.from = function(list, callBack) {
   // return 
   return storage;
 }
+
+_.reduce = function(list, callBack, initial) {
+  // loop through the list
+  let memo = initial; // 0, 1, 3
+  for(let i = 0; i < list.length; i++) {
+    // call the callback with arr[i], prev/initial
+    if(i === 0 && memo === undefined) {
+      memo = list[0];
+    } else {
+      memo = callBack(list[i], memo);
+      // i is from loop iteration, 
+      // list[i] is from function argument, 
+      // memo is from iteration value
+      // i = 0, list[i] = 1, memo = 0 => 1 + 0 = 1
+      // i = 1, list[i] = 2, memo = 1 => 2 + 1 = 3
+      // i = 2, list[i] = 3, memo = 3 => 3 + 3 = 6
+    }
+  }
+  // return result
+  console.log(memo);
+  return memo;
+}
+
+_.reduce([1, 2, 3], (v, sum) => v + sum, 0);
+_.reduce([2, 3, 5], (v, sum) => v + sum);
