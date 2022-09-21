@@ -90,3 +90,18 @@ function handleSymbol(value) {
       break;
   }
 }
+
+const CAT_URL = 'https://api.thecatapi.com/v1/images/search';
+const catEl = document.querySelector('#cat-target');
+
+async function addNewCat() {
+  const promise = await fetch(CAT_URL);
+  const processedResponse = await promise.json();
+  const img = document.createElement('img');
+  // console.log(processedResponse);
+  img.src = processedResponse[0].url;
+  img.alt = "cute cat";
+  catEl.appendChild(img);
+}
+
+document.querySelector('#cat-btn').addEventListener('click', addNewCat);
