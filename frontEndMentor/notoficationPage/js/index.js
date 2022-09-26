@@ -147,6 +147,12 @@ const countLogger = delayCounter(3, 1000)
 
 function promised (val) {
   // ADD CODE HERE
+  const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(val);
+    }, 2000);
+  })
+  return promise;
 }
 
 // UNCOMMENT THESE TO TEST YOUR WORK!
