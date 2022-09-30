@@ -1,19 +1,19 @@
-'use strict';
+"use strict";
 
 /* CHALLENGE 1 */
 
 // Thinking point (no writing code necessary for this challenge): Inspect the code given to you in Challenge 1. In what order should the console logs come out? Howdy first or Partnah first?
 
 function sayHowdy() {
-  console.log('Howdy');
+  console.log("Howdy");
 }
 
 function testMe() {
   setTimeout(sayHowdy, 0);
-  console.log('Partnah');
+  console.log("Partnah");
 }
 // After thinking it through, uncomment the following line to check your guess!
-// testMe(); // what order should these log out? Howdy or Partnah first? 
+// testMe(); // what order should these log out? Howdy or Partnah first?
 // => partnah!
 
 // ============================================================================================= //
@@ -62,7 +62,7 @@ function brokenRecord() {
   }, 1000);
 
   // method 2
-  setInterval(() => console.log('hi again'), 1000);
+  setInterval(() => console.log("hi again"), 1000);
 }
 // Uncomment the following line to check your work!
 //brokenRecord(); // should log (every second): hi again
@@ -99,12 +99,12 @@ function everyXsecsForYsecs(func, interval, duration) {
   // ADD CODE HERE
   const intervalId = setInterval(func, interval * 1000);
   setTimeout(() => {
-    clearInterval(intervalId)
+    clearInterval(intervalId);
   }, duration * 1000);
 }
 // Uncomment the following lines to check your work!
 function theEnd() {
-  console.log('This is the end!');
+  console.log("This is the end!");
 }
 //everyXsecsForYsecs(theEnd, 2, 20); // should invoke theEnd function every 2 seconds, for 20 seconds): This is the end!
 
@@ -119,20 +119,20 @@ function delayCounter(target, wait) {
   let intervalId;
   let counter = 0;
   return function inner() {
-    if(counter === 0) {
+    if (counter === 0) {
       counter++;
       intervalId = setInterval(() => console.log(inner()), wait);
-    } else if(counter === target) {
+    } else if (counter === target) {
       clearInterval(intervalId);
       return counter;
     } else {
       return counter++;
     }
-  }
+  };
 }
 
 // UNCOMMENT THESE TO TEST YOUR WORK!
-const countLogger = delayCounter(3, 1000)
+const countLogger = delayCounter(3, 1000);
 // countLogger();
 // After 1 second, log 1
 // After 2 seconds, log 2
@@ -145,19 +145,19 @@ const countLogger = delayCounter(3, 1000)
 // Write a function, promised, that takes in a value. This function will return a promise that will resolve after 2 seconds.
 // Hint: take a look at the Promise object docs on MDN.
 
-function promised (val) {
+function promised(val) {
   // ADD CODE HERE
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(val);
     }, 2000);
-  })
+  });
   return promise;
 }
 
 // UNCOMMENT THESE TO TEST YOUR WORK!
 // const createPromise = promised('wait for it...');
-// createPromise.then((val) => console.log(val)); 
+// createPromise.then((val) => console.log(val));
 // will log "wait for it..." to the console after 2 seconds
 
 // ============================================================================================= //
@@ -214,4 +214,3 @@ function debounce(callback, interval) {
 // setTimeout(function() { console.log(giveHiSometimes()); }, 2000); // -> undefined
 // setTimeout(function() { console.log(giveHiSometimes()); }, 4000); // -> undefined
 // setTimeout(function() { console.log(giveHiSometimes()); }, 8000); // -> 'hi'
-
