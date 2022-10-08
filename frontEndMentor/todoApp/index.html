@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Page</title>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
     <nav id="navbar">
       <a href="" class="nav-brand">App</a>
       <ul>
@@ -15,41 +15,41 @@
     </nav>
 
     <div class="container" id="main">
-        <h1>Welcome to our app</h1>
-        <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus,
-            voluptatem.
-        </p>
+      <h1>Welcome to our app</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus,
+        voluptatem.
+      </p>
 
-        <form id="todo-form">
-            <label for="todo-title">Todo</label>
-            <input id="todo-title" type="text" placeholder="Enter your todo">
-            <select id="todo-category">
-                <option value="work">Work</option>
-                <option value="personal">Personal</option>
-            </select>
-            <input type="submit" class="btn btn-outline" value="Add" />
-        </form>
-        <hr class="separator" />
-        <div>
-            <label>
-                Filter:
-                <select id="todo-filter">
-                    <option value="">Show all</option>
-                    <option value="work">Work only</option>
-                    <option value="personal">Personal only</option>
-                </select>
-            </label>
-            <h3>Todos <span id="todo-count"></span></h3>
-            <ul id="todo-list"></ul>
-        </div>
+      <form id="todo-form">
+        <label for="todo-title">Todo</label>
+        <input id="todo-title" type="text" placeholder="Enter your todo" />
+        <select id="todo-category">
+          <option value="work">Work</option>
+          <option value="personal">Personal</option>
+        </select>
+        <input type="submit" class="btn btn-outline" value="Add" />
+      </form>
+      <hr class="separator" />
+      <div>
+        <label>
+          Filter:
+          <select id="todo-filter">
+            <option value="">Show all</option>
+            <option value="work">Work only</option>
+            <option value="personal">Personal only</option>
+          </select>
+        </label>
+        <h3>Todos <span id="todo-count"></span></h3>
+        <ul id="todo-list"></ul>
+      </div>
     </div>
 
     <footer id="footer-wrapper">
-        <a href="about.html" target="_blank">About us</a>
-        <a href="contact.html" target="_blank">Contact us</a>
+      <a href="about.html" target="_blank">About us</a>
+      <a href="contact.html" target="_blank">Contact us</a>
     </footer>
     <script type="module" src="index.js"></script>
     <script type="module" src="todo.js"></script>
-</body>
+  </body>
 </html>
